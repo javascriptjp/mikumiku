@@ -1,0 +1,108 @@
+@use "./reset";
+
+@use "./color";
+
+@use "./settings";
+@use "./button";
+@use "./animation";
+
+body {
+    background-color: var(--background-color);
+    align-content: center;
+}
+
+.player {
+    position: relative;
+    width: settings.$width;
+    height: 560px;
+    margin: auto auto;
+    top: 20px;
+    .topbar {
+        @include button.layout();
+        height: 55px;
+        .inside {
+            @include button.poses();
+            .button-minimize {
+                @include button.default();
+                margin-left: 10px;
+            }
+            .button-menu {
+                @include button.default();
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .video {
+        position: relative;
+        width: settings.$width;
+        height: settings.$width;
+        border: var(--button-color) solid 2px;
+    }
+
+    .accessory {
+        @include button.layout();
+        height: 50px;
+        .inside {
+            @include button.poses();
+            .button-bookmark {
+                @include button.default();
+                margin-right: auto;
+            }
+            .button-like {
+                @include button.default();
+                @include button.like();
+                margin: 0 auto;
+            }
+            .button-add {
+                @include button.default();
+                margin-left: auto;
+            }
+        }
+    }
+
+    .seekbar {
+        position: relative;
+        width: settings.$width;
+        height: 45px;
+        .timebar {
+            @include button.seekbar();
+            display: flex;
+            position: relative;
+            top: 30px;
+            width: settings.$width;
+            height: 5px;
+            border-radius: 20px;
+            align-items: center;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            .time {
+                @include button.default();
+                @include button.seekbutton();
+                width: 17.5px;
+                height: 17.5px;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+    }
+
+    .control {
+        @include button.layout();
+        height: 50px;
+        .inside {
+            @include button.poses();
+            .button-backward {
+                @include button.default();
+                margin-left: 80px;
+            }
+            .button-play {
+                @include button.default();
+                @include button.play();
+                margin: 0 auto;
+            }
+            .button-forward {
+                @include button.default();
+                margin-right: 80px;
+            }
+        }
+    }
+}

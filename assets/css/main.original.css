@@ -1,0 +1,1575 @@
+@charset "UTF-8";
+/*! resset.dev • v5.0.2 */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0; /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+   # General elements
+   # ================================================================= */
+hr {
+  overflow: visible; /* Show the overflow in Edge and IE */
+  height: 0; /* Add the correct box sizing in Firefox */
+  color: inherit; /* Correct border color in Firefox. */
+}
+
+details,
+main {
+  display: block; /* Render the `main` element consistently in IE. */
+}
+
+summary {
+  display: list-item; /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+
+[hidden] {
+  display: none; /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: none; /* Remove the bottom border in Chrome 57 */
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+a {
+  background-color: transparent; /* Remove the gray background on active links in IE 10 */
+}
+
+a:active,
+a:hover {
+  outline-width: 0; /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* Specify the font family of code elements */
+}
+
+pre {
+  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+}
+
+b,
+strong {
+  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
+  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
+}
+
+iframe {
+  border-style: none;
+}
+
+/* # =================================================================
+     # Forms
+     # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+  -moz-appearance: textfield;
+       appearance: textfield;
+  outline-offset: -2px; /* Correct the outline style in Safari */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+}
+
+textarea {
+  overflow: auto; /* Internet Explorer 11+ */
+  resize: vertical; /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold; /* Restore the font weight unset by the previous rule */
+}
+
+button {
+  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+button,
+select {
+  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type=button],
+[type=reset],
+[type=submit],
+[role=button] {
+  cursor: pointer;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+  -moz-appearance: button;
+       appearance: button;
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline-width: 0;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none; /* Firefox 36+ */
+  -webkit-appearance: none; /* Chrome 41+ */
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none; /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor; /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge and IE */
+  white-space: normal; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+}
+
+::-webkit-file-upload-button {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
+  color: inherit;
+  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+     # Specify media element style
+     # ================================================================= */
+img {
+  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+/* # =================================================================
+     # Accessibility
+     # ================================================================= */
+/* Specify the progress cursor of updating elements */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled=true] {
+  cursor: default;
+}
+
+.mikumiku-theme {
+  --background-color: #fefefe;
+  --background-r-color: 254;
+  --background-g-color: 254;
+  --background-b-color: 254;
+  --background-rgb-color: 254, 254, 254;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #bbbbbb;
+  --seekbar-right-r-color: 187;
+  --seekbar-right-g-color: 187;
+  --seekbar-right-b-color: 187;
+  --seekbar-right-rgb-color: 187, 187, 187;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.melt-theme {
+  --background-color: #55f7eb;
+  --background-r-color: 85;
+  --background-g-color: 247;
+  --background-b-color: 235;
+  --background-rgb-color: 85, 247, 235;
+  --button-color: #007398;
+  --button-r-color: 0;
+  --button-g-color: 115;
+  --button-b-color: 152;
+  --button-rgb-color: 0, 115, 152;
+  --seekbar-left-color: #007398;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 115;
+  --seekbar-left-b-color: 152;
+  --seekbar-left-rgb-color: 0, 115, 152;
+  --seekbar-right-color: #d3ffff;
+  --seekbar-right-r-color: 211;
+  --seekbar-right-g-color: 255;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 211, 255, 255;
+  --seekbar-button-color: #007398;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 115;
+  --seekbar-button-b-color: 152;
+  --seekbar-button-rgb-color: 0, 115, 152;
+}
+
+.loveiswar-theme {
+  --background-color: #c1d2e2;
+  --background-r-color: 193;
+  --background-g-color: 210;
+  --background-b-color: 226;
+  --background-rgb-color: 193, 210, 226;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #0bedeb;
+  --seekbar-right-r-color: 11;
+  --seekbar-right-g-color: 237;
+  --seekbar-right-b-color: 235;
+  --seekbar-right-rgb-color: 11, 237, 235;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.syousitu-theme {
+  --background-color: #dfebd3;
+  --background-r-color: 223;
+  --background-g-color: 235;
+  --background-b-color: 211;
+  --background-rgb-color: 223, 235, 211;
+  --button-color: #697b7e;
+  --button-r-color: 105;
+  --button-g-color: 123;
+  --button-b-color: 126;
+  --button-rgb-color: 105, 123, 126;
+  --seekbar-left-color: #697b7e;
+  --seekbar-left-r-color: 105;
+  --seekbar-left-g-color: 123;
+  --seekbar-left-b-color: 126;
+  --seekbar-left-rgb-color: 105, 123, 126;
+  --seekbar-right-color: #cad1cb;
+  --seekbar-right-r-color: 202;
+  --seekbar-right-g-color: 209;
+  --seekbar-right-b-color: 203;
+  --seekbar-right-rgb-color: 202, 209, 203;
+  --seekbar-button-color: #697b7e;
+  --seekbar-button-r-color: 105;
+  --seekbar-button-g-color: 123;
+  --seekbar-button-b-color: 126;
+  --seekbar-button-rgb-color: 105, 123, 126;
+}
+
+.worldismine-theme {
+  --background-color: #c31ca2;
+  --background-r-color: 195;
+  --background-g-color: 28;
+  --background-b-color: 162;
+  --background-rgb-color: 195, 28, 162;
+  --button-color: #292137;
+  --button-r-color: 41;
+  --button-g-color: 33;
+  --button-b-color: 55;
+  --button-rgb-color: 41, 33, 55;
+  --seekbar-left-color: #292137;
+  --seekbar-left-r-color: 41;
+  --seekbar-left-g-color: 33;
+  --seekbar-left-b-color: 55;
+  --seekbar-left-rgb-color: 41, 33, 55;
+  --seekbar-right-color: #705b96;
+  --seekbar-right-r-color: 112;
+  --seekbar-right-g-color: 91;
+  --seekbar-right-b-color: 150;
+  --seekbar-right-rgb-color: 112, 91, 150;
+  --seekbar-button-color: #292137;
+  --seekbar-button-r-color: 41;
+  --seekbar-button-g-color: 33;
+  --seekbar-button-b-color: 55;
+  --seekbar-button-rgb-color: 41, 33, 55;
+}
+
+.popipo-theme {
+  --background-color: #e1fdf5;
+  --background-r-color: 225;
+  --background-g-color: 253;
+  --background-b-color: 245;
+  --background-rgb-color: 225, 253, 245;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #41b09e;
+  --seekbar-right-r-color: 65;
+  --seekbar-right-g-color: 176;
+  --seekbar-right-b-color: 158;
+  --seekbar-right-rgb-color: 65, 176, 158;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.romeoandcinderella-theme {
+  --background-color: #fd4994;
+  --background-r-color: 253;
+  --background-g-color: 73;
+  --background-b-color: 148;
+  --background-rgb-color: 253, 73, 148;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #020000;
+  --seekbar-left-r-color: 2;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 2, 0, 0;
+  --seekbar-right-color: #020000;
+  --seekbar-right-r-color: 2;
+  --seekbar-right-g-color: 0;
+  --seekbar-right-b-color: 0;
+  --seekbar-right-rgb-color: 2, 0, 0;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.ichikyuunigo-theme {
+  --background-color: #dae4e4;
+  --background-r-color: 218;
+  --background-g-color: 228;
+  --background-b-color: 228;
+  --background-rgb-color: 218, 228, 228;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #000000;
+  --seekbar-right-r-color: 0;
+  --seekbar-right-g-color: 0;
+  --seekbar-right-b-color: 0;
+  --seekbar-right-rgb-color: 0, 0, 0;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.matryoshika-theme {
+  --background-color: #fe9a00;
+  --background-r-color: 254;
+  --background-g-color: 154;
+  --background-b-color: 0;
+  --background-rgb-color: 254, 154, 0;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #ffffff;
+  --seekbar-right-r-color: 255;
+  --seekbar-right-g-color: 255;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 255, 255, 255;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.deepseagirl-theme {
+  --background-color: #d3e9f2;
+  --background-r-color: 211;
+  --background-g-color: 233;
+  --background-b-color: 242;
+  --background-rgb-color: 211, 233, 242;
+  --button-color: #4793ba;
+  --button-r-color: 71;
+  --button-g-color: 147;
+  --button-b-color: 186;
+  --button-rgb-color: 71, 147, 186;
+  --seekbar-left-color: #4793ba;
+  --seekbar-left-r-color: 71;
+  --seekbar-left-g-color: 147;
+  --seekbar-left-b-color: 186;
+  --seekbar-left-rgb-color: 71, 147, 186;
+  --seekbar-right-color: #4793ba;
+  --seekbar-right-r-color: 71;
+  --seekbar-right-g-color: 147;
+  --seekbar-right-b-color: 186;
+  --seekbar-right-rgb-color: 71, 147, 186;
+  --seekbar-button-color: #4793ba;
+  --seekbar-button-r-color: 71;
+  --seekbar-button-g-color: 147;
+  --seekbar-button-b-color: 186;
+  --seekbar-button-rgb-color: 71, 147, 186;
+}
+
+.strobelight-theme {
+  --background-color: #f9f2ab;
+  --background-r-color: 249;
+  --background-g-color: 242;
+  --background-b-color: 171;
+  --background-rgb-color: 249, 242, 171;
+  --button-color: #615b49;
+  --button-r-color: 97;
+  --button-g-color: 91;
+  --button-b-color: 73;
+  --button-rgb-color: 97, 91, 73;
+  --seekbar-left-color: #615b49;
+  --seekbar-left-r-color: 97;
+  --seekbar-left-g-color: 91;
+  --seekbar-left-b-color: 73;
+  --seekbar-left-rgb-color: 97, 91, 73;
+  --seekbar-right-color: #615b49;
+  --seekbar-right-r-color: 97;
+  --seekbar-right-g-color: 91;
+  --seekbar-right-b-color: 73;
+  --seekbar-right-rgb-color: 97, 91, 73;
+  --seekbar-button-color: #615b49;
+  --seekbar-button-r-color: 97;
+  --seekbar-button-g-color: 91;
+  --seekbar-button-b-color: 73;
+  --seekbar-button-rgb-color: 97, 91, 73;
+}
+
+.karakuripierrot-theme {
+  --background-color: #731d2f;
+  --background-r-color: 115;
+  --background-g-color: 29;
+  --background-b-color: 47;
+  --background-rgb-color: 115, 29, 47;
+  --button-color: #221115;
+  --button-r-color: 34;
+  --button-g-color: 17;
+  --button-b-color: 21;
+  --button-rgb-color: 34, 17, 21;
+  --seekbar-left-color: #221115;
+  --seekbar-left-r-color: 34;
+  --seekbar-left-g-color: 17;
+  --seekbar-left-b-color: 21;
+  --seekbar-left-rgb-color: 34, 17, 21;
+  --seekbar-right-color: #ffffff;
+  --seekbar-right-r-color: 255;
+  --seekbar-right-g-color: 255;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 255, 255, 255;
+  --seekbar-button-color: #221115;
+  --seekbar-button-r-color: 34;
+  --seekbar-button-g-color: 17;
+  --seekbar-button-b-color: 21;
+  --seekbar-button-rgb-color: 34, 17, 21;
+}
+
+.senbonzakura-theme {
+  --background-color: #fddfab;
+  --background-r-color: 253;
+  --background-g-color: 223;
+  --background-b-color: 171;
+  --background-rgb-color: 253, 223, 171;
+  --button-color: #331208;
+  --button-r-color: 51;
+  --button-g-color: 18;
+  --button-b-color: 8;
+  --button-rgb-color: 51, 18, 8;
+  --seekbar-left-color: #331208;
+  --seekbar-left-r-color: 51;
+  --seekbar-left-g-color: 18;
+  --seekbar-left-b-color: 8;
+  --seekbar-left-rgb-color: 51, 18, 8;
+  --seekbar-right-color: #331208;
+  --seekbar-right-r-color: 51;
+  --seekbar-right-g-color: 18;
+  --seekbar-right-b-color: 8;
+  --seekbar-right-rgb-color: 51, 18, 8;
+  --seekbar-button-color: #331208;
+  --seekbar-button-r-color: 51;
+  --seekbar-button-g-color: 18;
+  --seekbar-button-b-color: 8;
+  --seekbar-button-rgb-color: 51, 18, 8;
+}
+
+.tellyourworld-theme {
+  --background-color: #000012;
+  --background-r-color: 0;
+  --background-g-color: 0;
+  --background-b-color: 18;
+  --background-rgb-color: 0, 0, 18;
+  --button-color: #f0eff8;
+  --button-r-color: 240;
+  --button-g-color: 239;
+  --button-b-color: 248;
+  --button-rgb-color: 240, 239, 248;
+  --seekbar-left-color: #f0eff8;
+  --seekbar-left-r-color: 240;
+  --seekbar-left-g-color: 239;
+  --seekbar-left-b-color: 248;
+  --seekbar-left-rgb-color: 240, 239, 248;
+  --seekbar-right-color: #f0eff8;
+  --seekbar-right-r-color: 240;
+  --seekbar-right-g-color: 239;
+  --seekbar-right-b-color: 248;
+  --seekbar-right-rgb-color: 240, 239, 248;
+  --seekbar-button-color: #f0eff8;
+  --seekbar-button-r-color: 240;
+  --seekbar-button-g-color: 239;
+  --seekbar-button-b-color: 248;
+  --seekbar-button-rgb-color: 240, 239, 248;
+}
+
+.oddsandends-theme {
+  --background-color: #f4be3d;
+  --background-r-color: 244;
+  --background-g-color: 190;
+  --background-b-color: 61;
+  --background-rgb-color: 244, 190, 61;
+  --button-color: #010003;
+  --button-r-color: 1;
+  --button-g-color: 0;
+  --button-b-color: 3;
+  --button-rgb-color: 1, 0, 3;
+  --seekbar-left-color: #010003;
+  --seekbar-left-r-color: 1;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 3;
+  --seekbar-left-rgb-color: 1, 0, 3;
+  --seekbar-right-color: #fbf6c2;
+  --seekbar-right-r-color: 251;
+  --seekbar-right-g-color: 246;
+  --seekbar-right-b-color: 194;
+  --seekbar-right-rgb-color: 251, 246, 194;
+  --seekbar-button-color: #010003;
+  --seekbar-button-r-color: 1;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 3;
+  --seekbar-button-rgb-color: 1, 0, 3;
+}
+
+.brainfluidexplosiongirl-theme {
+  --background-color: #f1f1f1;
+  --background-r-color: 241;
+  --background-g-color: 241;
+  --background-b-color: 241;
+  --background-rgb-color: 241, 241, 241;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #000000;
+  --seekbar-right-r-color: 0;
+  --seekbar-right-g-color: 0;
+  --seekbar-right-b-color: 0;
+  --seekbar-right-rgb-color: 0, 0, 0;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.atgodsmercy-theme {
+  --background-color: #fff6c8;
+  --background-r-color: 255;
+  --background-g-color: 246;
+  --background-b-color: 200;
+  --background-rgb-color: 255, 246, 200;
+  --button-color: #5c202e;
+  --button-r-color: 92;
+  --button-g-color: 32;
+  --button-b-color: 46;
+  --button-rgb-color: 92, 32, 46;
+  --seekbar-left-color: #5c202e;
+  --seekbar-left-r-color: 92;
+  --seekbar-left-g-color: 32;
+  --seekbar-left-b-color: 46;
+  --seekbar-left-rgb-color: 92, 32, 46;
+  --seekbar-right-color: #5c202e;
+  --seekbar-right-r-color: 92;
+  --seekbar-right-g-color: 32;
+  --seekbar-right-b-color: 46;
+  --seekbar-right-rgb-color: 92, 32, 46;
+  --seekbar-button-color: #5c202e;
+  --seekbar-button-r-color: 92;
+  --seekbar-button-g-color: 32;
+  --seekbar-button-b-color: 46;
+  --seekbar-button-rgb-color: 92, 32, 46;
+}
+
+.taleofthedeepsealily-theme {
+  --background-color: #c1f7ff;
+  --background-r-color: 193;
+  --background-g-color: 247;
+  --background-b-color: 255;
+  --background-rgb-color: 193, 247, 255;
+  --button-color: #144895;
+  --button-r-color: 20;
+  --button-g-color: 72;
+  --button-b-color: 149;
+  --button-rgb-color: 20, 72, 149;
+  --seekbar-left-color: #144895;
+  --seekbar-left-r-color: 20;
+  --seekbar-left-g-color: 72;
+  --seekbar-left-b-color: 149;
+  --seekbar-left-rgb-color: 20, 72, 149;
+  --seekbar-right-color: #ecfeff;
+  --seekbar-right-r-color: 236;
+  --seekbar-right-g-color: 254;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 236, 254, 255;
+  --seekbar-button-color: #144895;
+  --seekbar-button-r-color: 20;
+  --seekbar-button-g-color: 72;
+  --seekbar-button-b-color: 149;
+  --seekbar-button-rgb-color: 20, 72, 149;
+}
+
+.slowmotion-theme {
+  --background-color: #bdfed8;
+  --background-r-color: 189;
+  --background-g-color: 254;
+  --background-b-color: 216;
+  --background-rgb-color: 189, 254, 216;
+  --button-color: #09928f;
+  --button-r-color: 9;
+  --button-g-color: 146;
+  --button-b-color: 143;
+  --button-rgb-color: 9, 146, 143;
+  --seekbar-left-color: #ff2d2e;
+  --seekbar-left-r-color: 255;
+  --seekbar-left-g-color: 45;
+  --seekbar-left-b-color: 46;
+  --seekbar-left-rgb-color: 255, 45, 46;
+  --seekbar-right-color: #fbfefe;
+  --seekbar-right-r-color: 251;
+  --seekbar-right-g-color: 254;
+  --seekbar-right-b-color: 254;
+  --seekbar-right-rgb-color: 251, 254, 254;
+  --seekbar-button-color: #ff2d2e;
+  --seekbar-button-r-color: 255;
+  --seekbar-button-g-color: 45;
+  --seekbar-button-b-color: 46;
+  --seekbar-button-rgb-color: 255, 45, 46;
+}
+
+.lovetrial-theme {
+  --background-color: #fdefee;
+  --background-r-color: 253;
+  --background-g-color: 239;
+  --background-b-color: 238;
+  --background-rgb-color: 253, 239, 238;
+  --button-color: #512f49;
+  --button-r-color: 81;
+  --button-g-color: 47;
+  --button-b-color: 73;
+  --button-rgb-color: 81, 47, 73;
+  --seekbar-left-color: #512f49;
+  --seekbar-left-r-color: 81;
+  --seekbar-left-g-color: 47;
+  --seekbar-left-b-color: 73;
+  --seekbar-left-rgb-color: 81, 47, 73;
+  --seekbar-right-color: #c8b5bb;
+  --seekbar-right-r-color: 200;
+  --seekbar-right-g-color: 181;
+  --seekbar-right-b-color: 187;
+  --seekbar-right-rgb-color: 200, 181, 187;
+  --seekbar-button-color: #512f49;
+  --seekbar-button-r-color: 81;
+  --seekbar-button-g-color: 47;
+  --seekbar-button-b-color: 73;
+  --seekbar-button-rgb-color: 81, 47, 73;
+}
+
+.patchworkstaccato-theme {
+  --background-color: #f8f3f9;
+  --background-r-color: 248;
+  --background-g-color: 243;
+  --background-b-color: 249;
+  --background-rgb-color: 248, 243, 249;
+  --button-color: #5f585e;
+  --button-r-color: 95;
+  --button-g-color: 88;
+  --button-b-color: 94;
+  --button-rgb-color: 95, 88, 94;
+  --seekbar-left-color: #5f585e;
+  --seekbar-left-r-color: 95;
+  --seekbar-left-g-color: 88;
+  --seekbar-left-b-color: 94;
+  --seekbar-left-rgb-color: 95, 88, 94;
+  --seekbar-right-color: #a29aa3;
+  --seekbar-right-r-color: 162;
+  --seekbar-right-g-color: 154;
+  --seekbar-right-b-color: 163;
+  --seekbar-right-rgb-color: 162, 154, 163;
+  --seekbar-button-color: #5f585e;
+  --seekbar-button-r-color: 95;
+  --seekbar-button-g-color: 88;
+  --seekbar-button-b-color: 94;
+  --seekbar-button-rgb-color: 95, 88, 94;
+}
+
+.hibikase-theme {
+  --background-color: #0100fb;
+  --background-r-color: 1;
+  --background-g-color: 0;
+  --background-b-color: 251;
+  --background-rgb-color: 1, 0, 251;
+  --button-color: #3cd9ff;
+  --button-r-color: 60;
+  --button-g-color: 217;
+  --button-b-color: 255;
+  --button-rgb-color: 60, 217, 255;
+  --seekbar-left-color: #3cd9ff;
+  --seekbar-left-r-color: 60;
+  --seekbar-left-g-color: 217;
+  --seekbar-left-b-color: 255;
+  --seekbar-left-rgb-color: 60, 217, 255;
+  --seekbar-right-color: #3cd9ff;
+  --seekbar-right-r-color: 60;
+  --seekbar-right-g-color: 217;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 60, 217, 255;
+  --seekbar-button-color: #3cd9ff;
+  --seekbar-button-r-color: 60;
+  --seekbar-button-g-color: 217;
+  --seekbar-button-b-color: 255;
+  --seekbar-button-rgb-color: 60, 217, 255;
+}
+
+.aishite-theme {
+  --background-color: #10000c;
+  --background-r-color: 16;
+  --background-g-color: 0;
+  --background-b-color: 12;
+  --background-rgb-color: 16, 0, 12;
+  --button-color: #ee0021;
+  --button-r-color: 238;
+  --button-g-color: 0;
+  --button-b-color: 33;
+  --button-rgb-color: 238, 0, 33;
+  --seekbar-left-color: #ee0021;
+  --seekbar-left-r-color: 238;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 33;
+  --seekbar-left-rgb-color: 238, 0, 33;
+  --seekbar-right-color: #ee0021;
+  --seekbar-right-r-color: 238;
+  --seekbar-right-g-color: 0;
+  --seekbar-right-b-color: 33;
+  --seekbar-right-rgb-color: 238, 0, 33;
+  --seekbar-button-color: #ee0021;
+  --seekbar-button-r-color: 238;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 33;
+  --seekbar-button-rgb-color: 238, 0, 33;
+}
+
+.ghostrule-theme {
+  --background-color: #1e1060;
+  --background-r-color: 30;
+  --background-g-color: 16;
+  --background-b-color: 96;
+  --background-rgb-color: 30, 16, 96;
+  --button-color: #fc22fe;
+  --button-r-color: 252;
+  --button-g-color: 34;
+  --button-b-color: 254;
+  --button-rgb-color: 252, 34, 254;
+  --seekbar-left-color: #fc22fe;
+  --seekbar-left-r-color: 252;
+  --seekbar-left-g-color: 34;
+  --seekbar-left-b-color: 254;
+  --seekbar-left-rgb-color: 252, 34, 254;
+  --seekbar-right-color: #fc22fe;
+  --seekbar-right-r-color: 252;
+  --seekbar-right-g-color: 34;
+  --seekbar-right-b-color: 254;
+  --seekbar-right-rgb-color: 252, 34, 254;
+  --seekbar-button-color: #fc22fe;
+  --seekbar-button-r-color: 252;
+  --seekbar-button-g-color: 34;
+  --seekbar-button-b-color: 254;
+  --seekbar-button-rgb-color: 252, 34, 254;
+}
+
+.alienalien-theme {
+  --background-color: #ec3f40;
+  --background-r-color: 236;
+  --background-g-color: 63;
+  --background-b-color: 64;
+  --background-rgb-color: 236, 63, 64;
+  --button-color: #22221f;
+  --button-r-color: 34;
+  --button-g-color: 34;
+  --button-b-color: 31;
+  --button-rgb-color: 34, 34, 31;
+  --seekbar-left-color: #22221f;
+  --seekbar-left-r-color: 34;
+  --seekbar-left-g-color: 34;
+  --seekbar-left-b-color: 31;
+  --seekbar-left-rgb-color: 34, 34, 31;
+  --seekbar-right-color: #f9a3a4;
+  --seekbar-right-r-color: 249;
+  --seekbar-right-g-color: 163;
+  --seekbar-right-b-color: 164;
+  --seekbar-right-rgb-color: 249, 163, 164;
+  --seekbar-button-color: #22221f;
+  --seekbar-button-r-color: 34;
+  --seekbar-button-g-color: 34;
+  --seekbar-button-b-color: 31;
+  --seekbar-button-rgb-color: 34, 34, 31;
+}
+
+.imperialgirl-theme {
+  --background-color: #000013;
+  --background-r-color: 0;
+  --background-g-color: 0;
+  --background-b-color: 19;
+  --background-rgb-color: 0, 0, 19;
+  --button-color: #000272;
+  --button-r-color: 0;
+  --button-g-color: 2;
+  --button-b-color: 114;
+  --button-rgb-color: 0, 2, 114;
+  --seekbar-left-color: #000272;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 2;
+  --seekbar-left-b-color: 114;
+  --seekbar-left-rgb-color: 0, 2, 114;
+  --seekbar-right-color: #000272;
+  --seekbar-right-r-color: 0;
+  --seekbar-right-g-color: 2;
+  --seekbar-right-b-color: 114;
+  --seekbar-right-rgb-color: 0, 2, 114;
+  --seekbar-button-color: #000272;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 2;
+  --seekbar-button-b-color: 114;
+  --seekbar-button-rgb-color: 0, 2, 114;
+}
+
+.kimaguremercy-theme {
+  --background-color: #d6265c;
+  --background-r-color: 214;
+  --background-g-color: 38;
+  --background-b-color: 92;
+  --background-rgb-color: 214, 38, 92;
+  --button-color: #00264f;
+  --button-r-color: 0;
+  --button-g-color: 38;
+  --button-b-color: 79;
+  --button-rgb-color: 0, 38, 79;
+  --seekbar-left-color: #00264f;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 38;
+  --seekbar-left-b-color: 79;
+  --seekbar-left-rgb-color: 0, 38, 79;
+  --seekbar-right-color: #defbff;
+  --seekbar-right-r-color: 222;
+  --seekbar-right-g-color: 251;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 222, 251, 255;
+  --seekbar-button-color: #00264f;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 38;
+  --seekbar-button-b-color: 79;
+  --seekbar-button-rgb-color: 0, 38, 79;
+}
+
+.whitehappy-theme {
+  --background-color: #000000;
+  --background-r-color: 0;
+  --background-g-color: 0;
+  --background-b-color: 0;
+  --background-rgb-color: 0, 0, 0;
+  --button-color: #fefefe;
+  --button-r-color: 254;
+  --button-g-color: 254;
+  --button-b-color: 254;
+  --button-rgb-color: 254, 254, 254;
+  --seekbar-left-color: #fefefe;
+  --seekbar-left-r-color: 254;
+  --seekbar-left-g-color: 254;
+  --seekbar-left-b-color: 254;
+  --seekbar-left-rgb-color: 254, 254, 254;
+  --seekbar-right-color: #fefefe;
+  --seekbar-right-r-color: 254;
+  --seekbar-right-g-color: 254;
+  --seekbar-right-b-color: 254;
+  --seekbar-right-rgb-color: 254, 254, 254;
+  --seekbar-button-color: #fefefe;
+  --seekbar-button-r-color: 254;
+  --seekbar-button-g-color: 254;
+  --seekbar-button-b-color: 254;
+  --seekbar-button-rgb-color: 254, 254, 254;
+}
+
+.sandplanet-theme {
+  --background-color: #ebc496;
+  --background-r-color: 235;
+  --background-g-color: 196;
+  --background-b-color: 150;
+  --background-rgb-color: 235, 196, 150;
+  --button-color: #383544;
+  --button-r-color: 56;
+  --button-g-color: 53;
+  --button-b-color: 68;
+  --button-rgb-color: 56, 53, 68;
+  --seekbar-left-color: #383544;
+  --seekbar-left-r-color: 56;
+  --seekbar-left-g-color: 53;
+  --seekbar-left-b-color: 68;
+  --seekbar-left-rgb-color: 56, 53, 68;
+  --seekbar-right-color: #fbebe0;
+  --seekbar-right-r-color: 251;
+  --seekbar-right-g-color: 235;
+  --seekbar-right-b-color: 224;
+  --seekbar-right-rgb-color: 251, 235, 224;
+  --seekbar-button-color: #383544;
+  --seekbar-button-r-color: 56;
+  --seekbar-button-g-color: 53;
+  --seekbar-button-b-color: 68;
+  --seekbar-button-rgb-color: 56, 53, 68;
+}
+
+.hibana-theme {
+  --background-color: #090009;
+  --background-r-color: 9;
+  --background-g-color: 0;
+  --background-b-color: 9;
+  --background-rgb-color: 9, 0, 9;
+  --button-color: #fefefe;
+  --button-r-color: 254;
+  --button-g-color: 254;
+  --button-b-color: 254;
+  --button-rgb-color: 254, 254, 254;
+  --seekbar-left-color: #fefefe;
+  --seekbar-left-r-color: 254;
+  --seekbar-left-g-color: 254;
+  --seekbar-left-b-color: 254;
+  --seekbar-left-rgb-color: 254, 254, 254;
+  --seekbar-right-color: #fefefe;
+  --seekbar-right-r-color: 254;
+  --seekbar-right-g-color: 254;
+  --seekbar-right-b-color: 254;
+  --seekbar-right-rgb-color: 254, 254, 254;
+  --seekbar-button-color: #fefefe;
+  --seekbar-button-r-color: 254;
+  --seekbar-button-g-color: 254;
+  --seekbar-button-b-color: 254;
+  --seekbar-button-rgb-color: 254, 254, 254;
+}
+
+.hatedbylifeitself-theme {
+  --background-color: #a5a5a5;
+  --background-r-color: 165;
+  --background-g-color: 165;
+  --background-b-color: 165;
+  --background-rgb-color: 165, 165, 165;
+  --button-color: #020202;
+  --button-r-color: 2;
+  --button-g-color: 2;
+  --button-b-color: 2;
+  --button-rgb-color: 2, 2, 2;
+  --seekbar-left-color: #020202;
+  --seekbar-left-r-color: 2;
+  --seekbar-left-g-color: 2;
+  --seekbar-left-b-color: 2;
+  --seekbar-left-rgb-color: 2, 2, 2;
+  --seekbar-right-color: #020202;
+  --seekbar-right-r-color: 2;
+  --seekbar-right-g-color: 2;
+  --seekbar-right-b-color: 2;
+  --seekbar-right-rgb-color: 2, 2, 2;
+  --seekbar-button-color: #020202;
+  --seekbar-button-r-color: 2;
+  --seekbar-button-g-color: 2;
+  --seekbar-button-b-color: 2;
+  --seekbar-button-rgb-color: 2, 2, 2;
+}
+
+.unknownmothergoose-theme {
+  --background-color: #f9f9f9;
+  --background-r-color: 249;
+  --background-g-color: 249;
+  --background-b-color: 249;
+  --background-rgb-color: 249, 249, 249;
+  --button-color: #363635;
+  --button-r-color: 54;
+  --button-g-color: 54;
+  --button-b-color: 53;
+  --button-rgb-color: 54, 54, 53;
+  --seekbar-left-color: #363635;
+  --seekbar-left-r-color: 54;
+  --seekbar-left-g-color: 54;
+  --seekbar-left-b-color: 53;
+  --seekbar-left-rgb-color: 54, 54, 53;
+  --seekbar-right-color: #363635;
+  --seekbar-right-r-color: 54;
+  --seekbar-right-g-color: 54;
+  --seekbar-right-b-color: 53;
+  --seekbar-right-rgb-color: 54, 54, 53;
+  --seekbar-button-color: #363635;
+  --seekbar-button-r-color: 54;
+  --seekbar-button-g-color: 54;
+  --seekbar-button-b-color: 53;
+  --seekbar-button-rgb-color: 54, 54, 53;
+}
+
+.shoujorei-theme {
+  --background-color: #afdcfd;
+  --background-r-color: 175;
+  --background-g-color: 220;
+  --background-b-color: 253;
+  --background-rgb-color: 175, 220, 253;
+  --button-color: #4862b0;
+  --button-r-color: 72;
+  --button-g-color: 98;
+  --button-b-color: 176;
+  --button-rgb-color: 72, 98, 176;
+  --seekbar-left-color: #4862b0;
+  --seekbar-left-r-color: 72;
+  --seekbar-left-g-color: 98;
+  --seekbar-left-b-color: 176;
+  --seekbar-left-rgb-color: 72, 98, 176;
+  --seekbar-right-color: #d5f2ff;
+  --seekbar-right-r-color: 213;
+  --seekbar-right-g-color: 242;
+  --seekbar-right-b-color: 255;
+  --seekbar-right-rgb-color: 213, 242, 255;
+  --seekbar-button-color: #4862b0;
+  --seekbar-button-r-color: 72;
+  --seekbar-button-g-color: 98;
+  --seekbar-button-b-color: 176;
+  --seekbar-button-rgb-color: 72, 98, 176;
+}
+
+.bitterchocodecoration-theme {
+  --background-color: #292929;
+  --background-r-color: 41;
+  --background-g-color: 41;
+  --background-b-color: 41;
+  --background-rgb-color: 41, 41, 41;
+  --button-color: #fafafa;
+  --button-r-color: 250;
+  --button-g-color: 250;
+  --button-b-color: 250;
+  --button-rgb-color: 250, 250, 250;
+  --seekbar-left-color: #fafafa;
+  --seekbar-left-r-color: 250;
+  --seekbar-left-g-color: 250;
+  --seekbar-left-b-color: 250;
+  --seekbar-left-rgb-color: 250, 250, 250;
+  --seekbar-right-color: #fafafa;
+  --seekbar-right-r-color: 250;
+  --seekbar-right-g-color: 250;
+  --seekbar-right-b-color: 250;
+  --seekbar-right-rgb-color: 250, 250, 250;
+  --seekbar-button-color: #fafafa;
+  --seekbar-button-r-color: 250;
+  --seekbar-button-g-color: 250;
+  --seekbar-button-b-color: 250;
+  --seekbar-button-rgb-color: 250, 250, 250;
+}
+
+.darlingdance-theme {
+  --background-color: #ff01a1;
+  --background-r-color: 255;
+  --background-g-color: 1;
+  --background-b-color: 161;
+  --background-rgb-color: 255, 1, 161;
+  --button-color: #fdedf7;
+  --button-r-color: 253;
+  --button-g-color: 237;
+  --button-b-color: 247;
+  --button-rgb-color: 253, 237, 247;
+  --seekbar-left-color: #fdedf7;
+  --seekbar-left-r-color: 253;
+  --seekbar-left-g-color: 237;
+  --seekbar-left-b-color: 247;
+  --seekbar-left-rgb-color: 253, 237, 247;
+  --seekbar-right-color: #fdedf7;
+  --seekbar-right-r-color: 253;
+  --seekbar-right-g-color: 237;
+  --seekbar-right-b-color: 247;
+  --seekbar-right-rgb-color: 253, 237, 247;
+  --seekbar-button-color: #fdedf7;
+  --seekbar-button-r-color: 253;
+  --seekbar-button-g-color: 237;
+  --seekbar-button-b-color: 247;
+  --seekbar-button-rgb-color: 253, 237, 247;
+}
+
+.vampire-theme {
+  --background-color: #e70012;
+  --background-r-color: 231;
+  --background-g-color: 0;
+  --background-b-color: 18;
+  --background-rgb-color: 231, 0, 18;
+  --button-color: #fcffff;
+  --button-r-color: 252;
+  --button-g-color: 255;
+  --button-b-color: 255;
+  --button-rgb-color: 252, 255, 255;
+  --seekbar-left-color: #0d1d41;
+  --seekbar-left-r-color: 13;
+  --seekbar-left-g-color: 29;
+  --seekbar-left-b-color: 65;
+  --seekbar-left-rgb-color: 13, 29, 65;
+  --seekbar-right-color: #fdb027;
+  --seekbar-right-r-color: 253;
+  --seekbar-right-g-color: 176;
+  --seekbar-right-b-color: 39;
+  --seekbar-right-rgb-color: 253, 176, 39;
+  --seekbar-button-color: #0d1d41;
+  --seekbar-button-r-color: 13;
+  --seekbar-button-g-color: 29;
+  --seekbar-button-b-color: 65;
+  --seekbar-button-rgb-color: 13, 29, 65;
+}
+
+.gXodish-theme {
+  --background-color: #8e8e8e;
+  --background-r-color: 142;
+  --background-g-color: 142;
+  --background-b-color: 142;
+  --background-rgb-color: 142, 142, 142;
+  --button-color: #000000;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 0;
+  --button-rgb-color: 0, 0, 0;
+  --seekbar-left-color: #000000;
+  --seekbar-left-r-color: 0;
+  --seekbar-left-g-color: 0;
+  --seekbar-left-b-color: 0;
+  --seekbar-left-rgb-color: 0, 0, 0;
+  --seekbar-right-color: #971b21;
+  --seekbar-right-r-color: 151;
+  --seekbar-right-g-color: 27;
+  --seekbar-right-b-color: 33;
+  --seekbar-right-rgb-color: 151, 27, 33;
+  --seekbar-button-color: #000000;
+  --seekbar-button-r-color: 0;
+  --seekbar-button-g-color: 0;
+  --seekbar-button-b-color: 0;
+  --seekbar-button-rgb-color: 0, 0, 0;
+}
+
+.anonymousm-theme {
+  --background-color: #18f0f3;
+  --background-r-color: 24;
+  --background-g-color: 240;
+  --background-b-color: 243;
+  --background-rgb-color: 24, 240, 243;
+  --button-color: #000001;
+  --button-r-color: 0;
+  --button-g-color: 0;
+  --button-b-color: 1;
+  --button-rgb-color: 0, 0, 1;
+  --seekbar-left-color: #f50840;
+  --seekbar-left-r-color: 245;
+  --seekbar-left-g-color: 8;
+  --seekbar-left-b-color: 64;
+  --seekbar-left-rgb-color: 245, 8, 64;
+  --seekbar-right-color: #cefefd;
+  --seekbar-right-r-color: 206;
+  --seekbar-right-g-color: 254;
+  --seekbar-right-b-color: 253;
+  --seekbar-right-rgb-color: 206, 254, 253;
+  --seekbar-button-color: #f50840;
+  --seekbar-button-r-color: 245;
+  --seekbar-button-g-color: 8;
+  --seekbar-button-b-color: 64;
+  --seekbar-button-rgb-color: 245, 8, 64;
+}
+
+.hero-theme {
+  --background-color: #050db2;
+  --background-r-color: 5;
+  --background-g-color: 13;
+  --background-b-color: 178;
+  --background-rgb-color: 5, 13, 178;
+  --button-color: #1febff;
+  --button-r-color: 31;
+  --button-g-color: 235;
+  --button-b-color: 255;
+  --button-rgb-color: 31, 235, 255;
+  --seekbar-left-color: #1febff;
+  --seekbar-left-r-color: 31;
+  --seekbar-left-g-color: 235;
+  --seekbar-left-b-color: 255;
+  --seekbar-left-rgb-color: 31, 235, 255;
+  --seekbar-right-color: #050db2;
+  --seekbar-right-r-color: 5;
+  --seekbar-right-g-color: 13;
+  --seekbar-right-b-color: 178;
+  --seekbar-right-rgb-color: 5, 13, 178;
+  --seekbar-button-color: #1febff;
+  --seekbar-button-r-color: 31;
+  --seekbar-button-g-color: 235;
+  --seekbar-button-b-color: 255;
+  --seekbar-button-rgb-color: 31, 235, 255;
+}
+
+.change {
+  animation: 0.2s cubic-bezier(0.16, 1, 0.3, 1) 1 changeIn;
+}
+
+@keyframes changeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+body {
+  background-color: var(--background-color);
+  align-content: center;
+}
+
+.player {
+  position: relative;
+  width: 360px;
+  height: 560px;
+  margin: auto auto;
+  top: 20px;
+}
+.player .topbar {
+  display: flex;
+  position: relative;
+  width: 360px;
+  justify-content: center;
+  height: 55px;
+}
+.player .topbar .inside {
+  display: flex;
+  width: 360px;
+  align-items: center;
+  justify-content: space-between;
+}
+.player .topbar .inside .button-minimize {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 10px;
+}
+.player .topbar .inside .button-minimize:hover {
+  transform: scale(1.3);
+}
+.player .topbar .inside .button-minimize:active {
+  transform: scale(1.1);
+}
+.player .topbar .inside .button-menu {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-right: 15px;
+}
+.player .topbar .inside .button-menu:hover {
+  transform: scale(1.3);
+}
+.player .topbar .inside .button-menu:active {
+  transform: scale(1.1);
+}
+.player .video {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border: var(--button-color) solid 2px;
+}
+.player .accessory {
+  display: flex;
+  position: relative;
+  width: 360px;
+  justify-content: center;
+  height: 50px;
+}
+.player .accessory .inside {
+  display: flex;
+  width: 360px;
+  align-items: center;
+  justify-content: space-between;
+}
+.player .accessory .inside .button-bookmark {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-right: auto;
+}
+.player .accessory .inside .button-bookmark:hover {
+  transform: scale(1.3);
+}
+.player .accessory .inside .button-bookmark:active {
+  transform: scale(1.1);
+}
+.player .accessory .inside .button-like {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0 auto;
+}
+.player .accessory .inside .button-like:hover {
+  transform: scale(1.3);
+}
+.player .accessory .inside .button-like:active {
+  transform: scale(1.1);
+}
+.player .accessory .inside .button-add {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: auto;
+}
+.player .accessory .inside .button-add:hover {
+  transform: scale(1.3);
+}
+.player .accessory .inside .button-add:active {
+  transform: scale(1.1);
+}
+.player .seekbar {
+  position: relative;
+  width: 360px;
+  height: 45px;
+}
+.player .seekbar .timebar {
+  background: var(--button-color);
+  display: flex;
+  position: relative;
+  top: 30px;
+  width: 360px;
+  height: 5px;
+  border-radius: 20px;
+  align-items: center;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.player .seekbar .timebar .time {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 50%;
+  background-color: var(--seekbar-button-color);
+  width: 17.5px;
+  height: 17.5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.player .seekbar .timebar .time:hover {
+  transform: scale(1.3);
+}
+.player .seekbar .timebar .time:active {
+  transform: scale(1.1);
+}
+.player .control {
+  display: flex;
+  position: relative;
+  width: 360px;
+  justify-content: center;
+  height: 50px;
+}
+.player .control .inside {
+  display: flex;
+  width: 360px;
+  align-items: center;
+  justify-content: space-between;
+}
+.player .control .inside .button-backward {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 80px;
+}
+.player .control .inside .button-backward:hover {
+  transform: scale(1.3);
+}
+.player .control .inside .button-backward:active {
+  transform: scale(1.1);
+}
+.player .control .inside .button-play {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0 auto;
+}
+.player .control .inside .button-play:hover {
+  transform: scale(1.3);
+}
+.player .control .inside .button-play:active {
+  transform: scale(1.1);
+}
+.player .control .inside .button-forward {
+  cursor: pointer;
+  color: var(--button-color);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-right: 80px;
+}
+.player .control .inside .button-forward:hover {
+  transform: scale(1.3);
+}
+.player .control .inside .button-forward:active {
+  transform: scale(1.1);
+}/*# sourceMappingURL=main.original.css.map */
